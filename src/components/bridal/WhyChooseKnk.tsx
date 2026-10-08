@@ -14,8 +14,10 @@ import {
   Star,
   ShieldCheck,
 } from "lucide-react";
+import { useBookingModal } from "@/context/BookingContext";
 
 export default function WhyChooseKnk() {
+  const { openBookingModal } = useBookingModal();
   const highlights = [
     {
       icon: Award,
@@ -112,13 +114,14 @@ export default function WhyChooseKnk() {
 
             {/* CTAs Row */}
             <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-              <a
-                href="#booking"
-                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#B3203F] hover:bg-[#961732] text-white font-medium text-sm sm:text-[15px] shadow-lg shadow-[#B3203F]/25 hover:shadow-xl hover:shadow-[#B3203F]/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+              <button
+                type="button"
+                onClick={() => openBookingModal()}
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-full bg-[#B3203F] hover:bg-[#961732] text-white font-medium text-sm sm:text-[15px] shadow-lg shadow-[#B3203F]/25 hover:shadow-xl hover:shadow-[#B3203F]/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Book Your Bridal Date</span>
-              </a>
+              </button>
 
               <a
                 href={whatsappUrl}

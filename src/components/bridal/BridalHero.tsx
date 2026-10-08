@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { MessageCircle, Calendar, Sparkles, ChevronRight, CheckCircle2 } from "lucide-react";
+import { useBookingModal } from "@/context/BookingContext";
 
 export default function BridalHero() {
+  const { openBookingModal } = useBookingModal();
   const whatsappUrl =
     "https://wa.me/918881000552?text=" +
     encodeURIComponent(
@@ -73,13 +74,14 @@ export default function BridalHero() {
 
             {/* CTA Buttons row */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-3">
-              <a
-                href="#booking"
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#B3203F] hover:bg-[#961732] text-white font-medium text-sm sm:text-[15px] shadow-lg shadow-[#B3203F]/35 hover:shadow-xl hover:shadow-[#B3203F]/45 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+              <button
+                type="button"
+                onClick={() => openBookingModal()}
+                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-[#B3203F] hover:bg-[#961732] text-white font-medium text-sm sm:text-[15px] shadow-lg shadow-[#B3203F]/35 hover:shadow-xl hover:shadow-[#B3203F]/45 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Book Appointment</span>
-              </a>
+              </button>
 
               <a
                 href={whatsappUrl}

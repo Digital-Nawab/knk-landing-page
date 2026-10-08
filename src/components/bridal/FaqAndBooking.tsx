@@ -270,23 +270,12 @@ export default function FaqAndBooking() {
             <div>
               {/* Form Header */}
               <div className="border-b border-[#F0E9DF] pb-4 mb-5">
-                <div className="flex items-center justify-between flex-wrap gap-2">
-                  <div>
-                    <span className="text-[11px] font-semibold tracking-wider text-[#B3203F] uppercase block mb-1">
-                      Check Date Availability
-                    </span>
-                    <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-[#161413] tracking-tight">
-                      Bridal Consultation Form
-                    </h3>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#25D366] bg-[#25D366]/10 px-3 py-1 rounded-full border border-[#25D366]/20">
-                    <span className="w-2 h-2 rounded-full bg-[#25D366] animate-pulse" />
-                    2026 Slots Open
-                  </span>
-                </div>
-                <p className="text-xs sm:text-sm text-[#7A726B] mt-1.5 leading-relaxed">
-                  Fill your wedding details below to receive package pricing & slot status on WhatsApp.
-                </p>
+                <span className="text-[11px] font-semibold tracking-wider text-[#B3203F] uppercase block mb-1">
+                  Check Date Availability
+                </span>
+                <h3 className="font-playfair text-2xl sm:text-3xl font-bold text-[#161413] tracking-tight">
+                  Bridal Consultation Form
+                </h3>
               </div>
 
               {submitted ? (
@@ -483,10 +472,6 @@ export default function FaqAndBooking() {
                         </>
                       )}
                     </button>
-
-                    <p className="text-center text-[11px] text-[#7A726B] mt-2.5">
-                      ⚡ Instant WhatsApp proposal • Strictly 3 Brides / Date • Zero spam
-                    </p>
                   </div>
                 </form>
               )}

@@ -1,8 +1,10 @@
 "use client";
 
 import { Phone, MessageCircle, Calendar } from "lucide-react";
+import { useBookingModal } from "@/context/BookingContext";
 
 export default function MobileBottomBar() {
+  const { openBookingModal } = useBookingModal();
   const whatsappUrl =
     "https://wa.me/918881000552?text=" +
     encodeURIComponent(
@@ -38,14 +40,15 @@ export default function MobileBottomBar() {
         </a>
 
         {/* Book Appointment button */}
-        <a
-          href="#booking"
-          className="flex flex-col items-center justify-center py-1.5 px-2 rounded-xl bg-[#B3203F] hover:bg-[#961732] active:scale-95 text-white shadow-md shadow-[#B3203F]/25 transition text-center"
+        <button
+          type="button"
+          onClick={() => openBookingModal()}
+          className="flex flex-col items-center justify-center py-1.5 px-2 rounded-xl bg-[#B3203F] hover:bg-[#961732] active:scale-95 text-white shadow-md shadow-[#B3203F]/25 transition text-center cursor-pointer"
           aria-label="Book Bridal Appointment"
         >
           <Calendar className="w-4 h-4 mb-0.5" />
           <span className="text-[11px] font-semibold tracking-wide">Book</span>
-        </a>
+        </button>
       </div>
     </aside>
   );

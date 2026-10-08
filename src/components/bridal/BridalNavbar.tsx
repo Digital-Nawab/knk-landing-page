@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, Phone, Calendar, Search, ChevronDown, Sparkles } from "lucide-react";
+import { useBookingModal } from "@/context/BookingContext";
 
 export default function BridalNavbar({ onOpenSearch }: { onOpenSearch?: () => void }) {
+  const { openBookingModal } = useBookingModal();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -128,26 +130,28 @@ export default function BridalNavbar({ onOpenSearch }: { onOpenSearch?: () => vo
               <Search className="w-4 h-4" />
             </button>
 
-            <a
-              href="#booking"
-              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#B3203F] hover:bg-[#961732] text-white text-[13.5px] font-medium shadow-md shadow-[#B3203F]/25 hover:shadow-lg hover:shadow-[#B3203F]/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200"
+            <button
+              type="button"
+              onClick={() => openBookingModal()}
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-[#B3203F] hover:bg-[#961732] text-white text-[13.5px] font-medium shadow-md shadow-[#B3203F]/25 hover:shadow-lg hover:shadow-[#B3203F]/35 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>Book Appointment</span>
-            </a>
+            </button>
           </div>
 
           {/* Mobile Actions: Book button + Hamburger */}
           <div className="flex items-center gap-2.5 lg:hidden">
-            <a
-              href="#booking"
-              className="text-xs font-medium bg-[#B3203F] text-white px-3.5 py-1.5 rounded-full shadow-sm hover:bg-[#961732] transition"
+            <button
+              type="button"
+              onClick={() => openBookingModal()}
+              className="text-xs font-medium bg-[#B3203F] text-white px-3.5 py-1.5 rounded-full shadow-sm hover:bg-[#961732] transition cursor-pointer"
             >
               Book
-            </a>
+            </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 rounded-lg text-[#161413] hover:text-[#B3203F] hover:bg-[#F5EFE6] transition focus:outline-none"
+              className="p-2 rounded-lg text-[#161413] hover:text-[#B3203F] hover:bg-[#F5EFE6] transition focus:outline-none cursor-pointer"
               aria-label={isOpen ? "Close menu" : "Open menu"}
               aria-expanded={isOpen}
             >
@@ -173,14 +177,17 @@ export default function BridalNavbar({ onOpenSearch }: { onOpenSearch?: () => vo
             ))}
           </nav>
           <div className="pt-3 border-t border-[#EAE2D5] space-y-2">
-            <a
-              href="#booking"
-              onClick={() => setIsOpen(false)}
-              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#B3203F] text-white font-medium text-sm shadow-md"
+            <button
+              type="button"
+              onClick={() => {
+                setIsOpen(false);
+                openBookingModal();
+              }}
+              className="w-full flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#B3203F] text-white font-medium text-sm shadow-md cursor-pointer"
             >
               <Calendar className="w-4 h-4" />
               <span>Book Bridal Appointment</span>
-            </a>
+            </button>
             <a
               href="tel:+918881000552"
               className="w-full flex items-center justify-center gap-2 px-5 py-2.5 rounded-full border border-[#C9A24B] text-[#161413] text-sm font-medium hover:bg-[#F9F4EB]"

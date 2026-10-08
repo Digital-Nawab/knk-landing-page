@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Search, X, ArrowRight, Sparkles, MapPin } from "lucide-react";
+import { useBookingModal } from "@/context/BookingContext";
 
 interface SearchModalProps {
   isOpen: boolean;
@@ -9,6 +10,7 @@ interface SearchModalProps {
 }
 
 export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
+  const { openBookingModal } = useBookingModal();
   const [query, setQuery] = useState("");
 
   if (!isOpen) return null;
@@ -58,8 +60,16 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
               <a
                 key={item.label}
                 href={item.section}
-                onClick={onClose}
-                className="flex items-center justify-between p-3 rounded-xl hover:bg-[#F9F4EB] text-xs sm:text-sm text-[#161413] hover:text-[#B3203F] transition-colors group"
+                onClick={(e) => {
+                  if (item.type === "Booking") {
+                    e.preventDefault();
+                    onClose();
+                    openBookingModal();
+                  } else {
+                    onClose();
+                  }
+                }}
+                className="flex items-center justify-between p-3 rounded-xl hover:bg-[#F9F4EB] text-xs sm:text-sm text-[#161413] hover:text-[#B3203F] transition-colors group cursor-pointer"
               >
                 <div className="flex items-center gap-2">
                   <span className="text-[10px] font-semibold uppercase px-2 py-0.5 rounded bg-[#FAF5EE] border border-[#EAE2D5] text-[#7A726B]">
