@@ -1,0 +1,122 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: var(--font-serif), "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-playfair: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-script: var(--font-script), "Alex Brush", "Great Vibes", cursive;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+
+  --color-crimson: #b3203f;
+  --color-crimson-dark: #8f152f;
+  --color-gold: #c5a265;
+  --color-gold-dark: #9f7e42;
+  --color-gold-light: #e6d3af;
+
+  --color-noir: #0e0d0c;
+  --color-noir-soft: #171513;
+  --color-noir-card: #1c1a17;
+
+  --color-sand: #f5f0e8;
+  --color-canvas: #faf8f5;
+  --color-border-subtle: #eae4d9;
+}
+
+:root {
+  --bg-canvas: #faf8f5;
+  --fg-noir: #161412;
+  --fg-muted: #6e675e;
+  --accent-gold: #c5a265;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-canvas);
+  color: var(--fg-noir);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Luxury scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #faf8f5;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6ccbe;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #b8ab97;
+}
+
+/* Luxury selection color */
+::selection {
+  background-color: #c5a265;
+  color: #ffffff;
+}
+
+/* Editorial responsive typography utilities */
+.font-editorial {
+  font-family: var(--font-serif);
+}
+
+.font-playfair {
+  font-family: var(--font-playfair), "Playfair Display", Georgia, serif;
+}
+
+.font-script {
+  font-family: var(--font-script), "Alex Brush", "Great Vibes", cursive;
+}
+
+.font-inter {
+  font-family: var(--font-inter), "Inter", -apple-system, sans-serif;
+}
+
+.text-editorial-hero {
+  font-size: clamp(2.5rem, 6.2vw, 5.75rem);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.text-editorial-headline {
+  font-size: clamp(2rem, 4.2vw, 3.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+
+.text-editorial-subhead {
+  font-size: clamp(1.5rem, 2.8vw, 2.5rem);
+  line-height: 1.2;
+}
+
+.tracking-editorial {
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.tracking-editorial-wide {
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+/* Subtle image hover zoom */
+.img-luxury-zoom {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.group:hover .img-luxury-zoom {
+  transform: scale(1.05);
+}
+
+/* Touch action safety */
+button, a, input, select, textarea {
+  touch-action: manipulation;
+}
