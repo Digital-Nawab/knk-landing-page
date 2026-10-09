@@ -3,7 +3,7 @@ export const bridalServices = [
     id: "hd-bridal",
     title: "HD Bridal Makeup",
     subtitle: "High Definition Camera Ready",
-    image: "/assets/images/bridal/bridal-4.webp",
+    image: "/assets/images/bridal/service-hd.webp",
     alt: "HD Bridal Makeup in Lucknow by KNK Salon",
     description:
       "Ultra-fine micro pigment formulation designed for 4K video lenses. Delivers a natural velvet-satin radiance that looks soft, breathable, and luminous both in real light and high-resolution bridal photography.",
@@ -20,7 +20,7 @@ export const bridalServices = [
     id: "airbrush-bridal",
     title: "Airbrush Bridal Makeup",
     subtitle: "Flawless Porcelain Longevity",
-    image: "/assets/images/bridal/bridal-15.webp",
+    image: "/assets/images/bridal/service-airbrush.webp",
     alt: "Airbrush Bridal Makeup in Lucknow by KNK Salon",
     description:
       "Temptu pro-compressor micro-misting technique creating an untouchable, silicone-based barrier. 18-hour waterproof and tear-resistant perfection engineered specifically for humid weather and long pheras.",
@@ -37,7 +37,7 @@ export const bridalServices = [
     id: "engagement-sagan",
     title: "Engagement & Sagan Look",
     subtitle: "Romantic Dewy Glow",
-    image: "/assets/images/bridal/bridal-8.webp",
+    image: "/assets/images/bridal/service-engagement.webp",
     alt: "Engagement Bridal Makeup Lucknow by KNK Salon",
     description:
       "Soft-glam romantic aesthetic featuring luminous glass skin, pastel-friendly tonal eyes, gentle contouring, and modern textured hair styling perfect for ring ceremonies and intimate gatherings.",
@@ -54,7 +54,7 @@ export const bridalServices = [
     id: "reception-glam",
     title: "Reception & Cocktail Glam",
     subtitle: "Regal Statement Artistry",
-    image: "/assets/images/bridal/bridal-5.webp",
+    image: "/assets/images/bridal/service-reception.webp",
     alt: "Reception Bridal Makeup Artist Lucknow by KNK",
     description:
       "High-impact evening royalty with dramatic cut-crease or sultry smoky eyes, sculpted cheekbones, sculpted lip contour, and timeless Hollywood bridal waves that enchant throughout the grand night.",

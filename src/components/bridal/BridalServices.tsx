@@ -15,7 +15,7 @@ export default function BridalServices() {
       id: "hd-bridal",
       title: "HD Bridal Makeup",
       subtitle: "High Definition Camera Ready",
-      image: "/assets/images/bridal/bridal-4.webp",
+      image: "/assets/images/bridal/service-hd.webp",
       description:
         "Ultra-fine micro pigment formulation designed for 4K video lenses. Delivers a natural velvet-satin radiance that looks soft, breathable, and luminous.",
       details:
@@ -33,7 +33,7 @@ export default function BridalServices() {
       id: "airbrush-bridal",
       title: "Airbrush Bridal Makeup",
       subtitle: "Flawless Porcelain Longevity",
-      image: "/assets/images/bridal/bridal-15.webp",
+      image: "/assets/images/bridal/service-airbrush.webp",
       description:
         "Temptu pro-compressor micro-misting technique creating an untouchable, silicone-based barrier. 18-hour waterproof and tear-resistant perfection.",
       details:
@@ -51,7 +51,7 @@ export default function BridalServices() {
       id: "engagement-sagan",
       title: "Engagement & Sagan Look",
       subtitle: "Romantic Dewy Glow",
-      image: "/assets/images/bridal/bridal-8.webp",
+      image: "/assets/images/bridal/service-engagement.webp",
       description:
         "Soft-glam romantic aesthetic featuring luminous glass skin, pastel-friendly tonal eyes, gentle contouring, and modern textured hair styling.",
       details:
@@ -69,7 +69,7 @@ export default function BridalServices() {
       id: "reception-glam",
       title: "Reception & Cocktail Glam",
       subtitle: "Regal Statement Artistry",
-      image: "/assets/images/bridal/bridal-5.webp",
+      image: "/assets/images/bridal/service-reception.webp",
       description:
         "High-impact evening royalty with dramatic cut-crease or sultry smoky eyes, sculpted cheekbones, sculpted lip contour, and timeless Hollywood waves.",
       details:
@@ -86,21 +86,6 @@ export default function BridalServices() {
   ];
 
   const services = bridalServices && bridalServices.length > 0 ? bridalServices : fallbackServices;
-
-  const getImagePosition = (id: string) => {
-    switch (id) {
-      case "hd-bridal":
-        return "object-[center_15%]";
-      case "airbrush-bridal":
-        return "object-top";
-      case "engagement-sagan":
-        return "object-top";
-      case "reception-glam":
-        return "object-[center_15%]";
-      default:
-        return "object-top";
-    }
-  };
 
   return (
     <section id="services" className="py-16 sm:py-24 bg-[#FFFDF9] relative">
@@ -126,16 +111,16 @@ export default function BridalServices() {
               className="group bg-white rounded-3xl border border-[#EAE2D5] overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:border-[#C5A265] hover:-translate-y-1.5 transition-all duration-300 flex flex-col justify-between"
             >
               <div>
-                {/* Compact Card Image (h-48 sm:h-52) */}
-                <div className="relative h-48 sm:h-52 w-full overflow-hidden bg-[#FAF5EE]">
+                {/* Standardized 4:5 Aspect Ratio Image with Zero Inconsistent Cropping */}
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#FAF5EE]">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className={`object-cover ${getImagePosition(service.id)} group-hover:scale-105 transition-transform duration-700 ease-out`}
+                    className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-40 group-hover:opacity-70 transition-opacity" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-30 group-hover:opacity-60 transition-opacity" />
 
                   {/* Floating Tag Badge */}
                   {service.tag && (
